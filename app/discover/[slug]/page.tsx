@@ -202,7 +202,7 @@ export default function VenueDetailPage() {
             onClick={handleReservation}
             className="w-full"
           >
-            {venue.type === 'hotel' ? 'Book Now' : venue.type === 'venue' ? 'Request Info' : 'Make Reservation'}
+            {venue.type === 'hotel' ? 'Book Now' : 'Make Reservation'}
           </Button>
         </div>
       </div>
