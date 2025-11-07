@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ruby-red: 139 0 0;
+    --ruby-crimson: 92 0 0;
+    --ruby-rose-gold: 183 110 121;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-charcoal text-white antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+
+  .glass-elevated {
+    @apply bg-white/15 backdrop-blur-2xl border border-white/30 shadow-xl;
+  }
+
+  .glass-dark {
+    @apply bg-charcoal/70 backdrop-blur-2xl border border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-ruby-red to-ruby-rose-gold;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/30;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+/* Add this at the end of the file */
+
+/* Mobile-first container for development */
+body {
+  display: flex;
+  justify-content: center;
+  background: #000;
+}
+
+body > div {
+  max-width: 430px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+/* Constrain fixed headers to phone width */
+header.fixed:not(.bg-ruby-red) {
+  max-width: 430px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
