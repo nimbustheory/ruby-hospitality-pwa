@@ -183,8 +183,7 @@ export default function EventDetailPage() {
           <Button
             onClick={handleTicketPurchase}
             className="w-full"
-            disabled={event.capacity && event.ticketsSold && event.ticketsSold >= event.capacity}
-          >
+disabled={!!(event.capacity && event.ticketsSold && event.ticketsSold >= event.capacity)}          >
             {event.capacity && event.ticketsSold && event.ticketsSold >= event.capacity
               ? 'Sold Out'
               : event.ticketPrice === 0

@@ -12,7 +12,7 @@ const filterOptions: { label: string; value: VenueType | 'all' }[] = [
   { label: 'Restaurants', value: 'restaurant' },
   { label: 'Bars', value: 'bar' },
   { label: 'Hotels', value: 'hotel' },
-  { label: 'Venues', value: 'venue' },
+  { label: 'Event Spaces', value: 'event_space' },
 ];
 
 export default function DiscoverPage() {

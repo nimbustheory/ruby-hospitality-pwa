@@ -17,6 +17,9 @@ export function Button({
   size = 'md',
   fullWidth = false,
   className,
+  disabled,
+  onClick,
+  type,
   ...props
 }: ButtonProps) {
   const variants = {
@@ -36,6 +39,9 @@ export function Button({
     <motion.button
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
+      disabled={disabled}
+      onClick={onClick}
+      type={type}
       className={cn(
         'rounded-full font-semibold transition-all duration-200',
         'disabled:opacity-50 disabled:cursor-not-allowed',
@@ -44,7 +50,6 @@ export function Button({
         fullWidth && 'w-full',
         className
       )}
-      {...props}
     >
       {children}
     </motion.button>
